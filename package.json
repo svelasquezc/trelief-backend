@@ -1,0 +1,27 @@
+{
+  "name": "trelief-backend",
+  "version": "0.1.0",
+  "description": "The backend side of T-Relief side. It manages goals and connects the interfaces with the hotspots model",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svelasquezc/trelief-backend.git"
+  },
+  "keywords": [
+    "Taxi",
+    "backend"
+  ],
+  "author": "Steven Velasquez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/svelasquezc/trelief-backend/issues"
+  },
+  "homepage": "https://github.com/svelasquezc/trelief-backend#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.13"
+  }
+}
