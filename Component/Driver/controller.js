@@ -7,7 +7,7 @@ function addDriver(name){
         const user = {
             name
         }
-        return store.add(user)
+        return store.add(name)
     }
 }
 
@@ -16,6 +16,6 @@ function listDriver(){
 }
 
 module.exports = {
-    addUser,
-    listUsers
+    addDriver,
+    listDriver
 }

@@ -1,5 +1,5 @@
 const express = require('express')
-const driver = require('../Components/Message/network')
+const driver = require('../Component/Driver/network')
 
 const routes = function(server) {
     server.use('/driver', driver)
