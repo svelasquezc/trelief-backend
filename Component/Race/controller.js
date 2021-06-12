@@ -1,17 +1,13 @@
 const store = require('./store')
 
 function addRace(race){
+    console.log(race)
     if(
     !race.driver||
-    !race.originLatitude||
-    !race.originLongitude||
-    !race.destinationLatitude||
-    !race.destinationLongitude||
-    !race.isAccepted||
-    !race.isFinished||
     !race.estimatedTaxiFare||
     !race.originalTaxiFare||
-    !race.acceptedAt
+    !race.acceptedAt||
+    !race.finishedAt
     ){
         return Promise.reject('[raceController] invalid data')
     }
