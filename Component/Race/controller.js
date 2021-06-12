@@ -24,6 +24,22 @@ function addRace(race){
     return store.add(raceObj)
 }
 
+function totalFare(driverId){
+    if(!driverId){
+        return new Promise.reject('[raceController] missing data')
+    }
+    return store.totalFare(driverId)
+}
+
+function countIsAccepted(driverId){
+    if(!driverId){
+        return new Promise.reject('[raceController] missing data')
+    }
+    return store.count(driverId)
+}
+
 module.exports = {
-    addRace
+    addRace,
+    totalFare,
+    countIsAccepted
 }
