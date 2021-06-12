@@ -1,12 +1,12 @@
 const express = require('express')
 
+const config = require('./config')
+
 const db = require('./db')
 
 const router = require('./Network/routes')
 
-const uri = 'mongodb://localhost:27017/TRelief'
-
-db.connect(uri)
+db.connect(config.dbUrl)
 
 var app = express();
 
@@ -18,6 +18,6 @@ router(app)
 
 app.use('/app',express.static('Public'))
 
-app.listen(3000);
+app.listen(config.port);
 
-console.log("La app funciona por el puerto 3000");
+console.log(`La app funciona por el puerto ${config.port}`);

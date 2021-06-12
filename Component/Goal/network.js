@@ -2,12 +2,13 @@ const express = require('express')
 
 const response = require('../../Network/response')
 const controller = require('./controller')
+const generator = require('./generator')
 
 router = express.Router()
 
 router.post('/', (req,res) => {
     
-    controller.addDriver(req.body.name, req.body.email)
+    controller.addGoal(req.body.id, req.body.kind, req.body.unit, req.body.value)
     .then(data => {
         response.success(req, res, data, 201)
     }).catch(e => {
@@ -15,18 +16,26 @@ router.post('/', (req,res) => {
     })
 });
 
+router.get('/generate', (req, res) =>{
+    generator.generateGoal()
+    .then(data => {
+        response.success(req, res, data, 201)
+    }).catch(e => {
+        response.error(req, res, 'Unexpected Error', 500, e)
+    })
+})
+
+/*
+
 router.get('/:id', (req,res) => {
     
-    controller.listDriver(req.params.id)
+    controller.list(req.params.id)
     .then(data => {
         response.success(req, res, data, 200)
     }).catch(e => {
         response.error(req, res, 'Unexpected Error', 500, e)
     })
 });
-
-
-/*
 
 router.get('/', (req,res) => {
     controller.getMessages(req.query.user)

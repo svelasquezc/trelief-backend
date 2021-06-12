@@ -1,18 +1,20 @@
 const store = require('./store')
 
-function addDriver(name){
-    if(!name){
-        return Promise.reject('[userController] Missing name')
+function addDriver(name, email){
+    if(!name || !email){
+        return Promise.reject('[userController] Missing name or email')
     }else{
-        const user = {
-            name
+        const driver = {
+            name,
+            email,
+            goals: []
         }
-        return store.add(name)
+        return store.add(driver)
     }
 }
 
-function listDriver(){
-    return store.list()
+function listDriver(id){
+    return store.list(id)
 }
 
 module.exports = {
